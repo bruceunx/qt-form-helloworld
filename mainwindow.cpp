@@ -1,19 +1,12 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
+CustomForm::CustomForm(QWidget *parent) : QWidget(parent), ui(new Ui::Form) {
+  ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
+CustomForm::~CustomForm() { delete ui; }
 
-void MainWindow::on_actionExit_triggered()
-{
-    this->close();
+void CustomForm::on_pushButton_clicked() {
+  this->ui->textEdit->append("start");
 }

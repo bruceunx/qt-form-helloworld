@@ -1,25 +1,25 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include "_mainwindow.h"
+#include <QtWidgets>
 
 namespace Ui {
-class MainWindow;
+class CustomForm;
 }
 
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
+class CustomForm : public QWidget {
+  Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+  explicit CustomForm(QWidget *parent = 0);
+  ~CustomForm();
 
 private slots:
-    void on_actionExit_triggered();
+  void on_pushButton_clicked();
 
 private:
-    Ui::MainWindow *ui;
+  Ui::Form *ui;
 };
 
 #endif // MAINWINDOW_H
